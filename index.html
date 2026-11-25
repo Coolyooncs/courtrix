@@ -573,24 +573,28 @@ footer .logo{background:#fff;padding:10px 14px;border-radius:4px;width:150px;mar
     const btn = document.getElementById('send');
     btn.disabled = true; btn.textContent = '보내는 중…';
     let saved = false;
-    if (W3F_KEY && W3F_KEY !== 'YOUR_ACCESS_KEY_HERE') {
-      try {
-        const res = await fetch('https://api.web3forms.com/submit', {
+    const fields = {
+      '문의 유형': d.type, '이름': d.name, '연락처': d.phone, '이메일': d.email || '-',
+      '지역': d.region || '-', '설치 예정 공간': d.space || '-', '문의 내용': d.msg
+    };
+    try {
+      let res, j;
+      if (W3F_KEY && W3F_KEY !== 'YOUR_ACCESS_KEY_HERE') {
+        res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify({
-            access_key: W3F_KEY,
-            subject: '[코트릭스 홈페이지 문의] ' + d.type + ' - ' + d.name,
-            from_name: '코트릭스 홈페이지',
-            '문의 유형': d.type, '이름': d.name, '연락처': d.phone, '이메일': d.email || '-',
-            '지역': d.region || '-', '설치 예정 공간': d.space || '-', '문의 내용': d.msg,
-            replyto: d.email || undefined
-          })
+          body: JSON.stringify(Object.assign({ access_key: W3F_KEY, subject: '[코트릭스 홈페이지 문의] ' + d.type + ' - ' + d.name, from_name: '코트릭스 홈페이지' }, fields))
         });
-        const j = await res.json().catch(() => ({}));
-        saved = res.ok && j.success !== false;
-      } catch (x) { saved = false; }
-    }
+      } else {
+        res = await fetch('https://formsubmit.co/ajax/' + TO, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(Object.assign({ _subject: '[코트릭스 홈페이지 문의] ' + d.type + ' - ' + d.name, _template: 'table', _captcha: 'false' }, fields, d.email ? { _replyto: d.email } : {}))
+        });
+      }
+      j = await res.json().catch(() => ({}));
+      saved = res.ok && (j.success === true || j.success === 'true');
+    } catch (x) { saved = false; }
     done(d, saved);
   });
 
@@ -608,7 +612,7 @@ footer .logo{background:#fff;padding:10px 14px;border-radius:4px;width:150px;mar
     h.textContent = saved ? '문의가 접수되었습니다.' : '전송이 완료되지 않았습니다';
     p.textContent = saved
       ? d.name + '님, 남겨 주신 연락처로 영업일 기준 1–2일 안에 연락드리겠습니다.'
-      : (W3F_KEY === 'YOUR_ACCESS_KEY_HERE' ? '아래 버튼을 누르면 메일 앱이 열리고 내용이 채워집니다. 전송 버튼만 눌러 주세요. 메일 앱이 없다면' : '네트워크 문제로 자동 접수가 되지 않았습니다. 아래 버튼으로 메일을 보내시거나,') + ' 내용을 복사해 ' + TO + ' 또는 010-8110-1540 문자로 보내 주세요.';
+      : '일시적인 문제로 자동 접수가 되지 않았습니다. 아래 버튼으로 메일을 보내시거나, 내용을 복사해 ' + TO + ' 또는 010-8110-1540 문자로 보내 주세요.';
     const pre = document.createElement('pre'); pre.textContent = text;
     const acts = document.createElement('div'); acts.className = 'acts';
     const mail = document.createElement('a'); mail.className = 'btn'; mail.href = mailHref; mail.textContent = TO + '로 메일 보내기';
