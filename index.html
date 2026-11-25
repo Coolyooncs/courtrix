@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>코트릭스 | 랙시온 스크린테니스 국내 총판</title>
+<meta name="description" content="AI 스크린테니스 랙시온(RAXION) 국내 독점 총판 코트릭스. 창업·기기 도입 상담, 광교 직영점 코트 이용과 레슨 안내.">
+<link rel="icon" href="img/mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* VOICE  corporate B2B site after the imweb "GLOBAL LOGISTICS" template: confident, plain, factual
+   IDEA   a distributor's company site — blue photo heroes, orange calls to action, big stat counters, service cards
+   PICTURE real Raxion court photos under a deep-blue wash on every page header
+   COLOUR deep court blue #1f4c9c, signal orange #f0862f for actions, navy #141a22 band, cool grey #f4f6f9 panels
+   TYPE   Inter 800 for figures + Noto Sans KR 700/800 for titles, Noto Sans KR 400 text
+   LAYOUT sticky menu; each menu item is its own view (hash route); phone: stacked, menu folds into a toggle */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0f1318);--ink:light-dark(#16191f,#e9ecf1);--mute:light-dark(#5b6270,#9ba3b0);--panel:light-dark(#f4f6f9,#161c24);--card:light-dark(#ffffff,#1b222c);--line:light-dark(#e2e6ec,#2a323d);--blue:#1f4c9c;--blue2:light-dark(#1f4c9c,#7fa6ee);--orange:#f0862f;--navy:#141a22}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 "Noto Sans KR",system-ui,sans-serif;overflow-x:clip;word-break:keep-all}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:max(5vw,16px)}
+.band{padding-block:clamp(56px,7vw,104px)}
+.grey{background:var(--panel)}
+.eye{color:var(--orange);font-size:14px;font-weight:700;margin:0 0 10px}
+h1,h2,h3{margin:0;letter-spacing:-.02em;text-wrap:balance}
+h2{font:800 clamp(28px,3.4vw,42px)/1.25 "Noto Sans KR",sans-serif;margin-bottom:16px}
+h3{font:700 19px/1.4 "Noto Sans KR",sans-serif;margin-bottom:6px}
+p{margin:0 0 14px}
+.mute{color:var(--mute)}
+.lead{font-size:17px;color:var(--mute);max-width:44em}
+.num{font-family:Inter,"Noto Sans KR",sans-serif;font-weight:800;letter-spacing:-.02em}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:4px;background:var(--orange);color:#fff;text-decoration:none;font:700 15px "Noto Sans KR",sans-serif;border:0;cursor:pointer}
+.btn:hover{filter:brightness(1.06)}
+.btn.line{background:transparent;color:inherit;box-shadow:inset 0 0 0 1px currentColor}
+.btn.text{background:transparent;color:inherit;padding:0 8px}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+/* header */
+header{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:16px;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 21px Inter,sans-serif;letter-spacing:.02em;color:var(--blue2);flex:none}
+.brand img{width:38px}
+.menu{display:flex;gap:4px;list-style:none;margin:0 0 0 auto;padding:0}
+.menu a{display:flex;align-items:center;min-height:44px;padding:0 14px;text-decoration:none;font-size:15px;font-weight:500;color:var(--mute);border-radius:4px}
+.menu a:hover{color:var(--ink)}
+.menu a[aria-current=page]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--orange)}
+.nav .btn{min-height:42px;padding:0 18px;font-size:14px;flex:none}
+.tog{display:none;margin-left:auto;width:44px;height:44px;border:1px solid var(--line);background:transparent;color:inherit;border-radius:4px;cursor:pointer;font-size:20px}
+/* heroes */
+.hero{position:relative;color:#fff;overflow:hidden;background:var(--blue)}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;opacity:.75}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,44,96,.85),rgba(18,44,96,.15) 75%)}
+.hero .wrap{position:relative;z-index:1}
+.hero.big .wrap{min-height:min(78svh,700px);display:flex;flex-direction:column;justify-content:center;padding-block:72px}
+.hero.sub .wrap{padding-block:clamp(64px,8vw,112px)}
+.hero h1{font:800 clamp(34px,5vw,60px)/1.18 "Noto Sans KR",sans-serif;max-width:15em;margin-bottom:18px}
+.hero.sub h1{font-size:clamp(30px,4vw,48px)}
+.hero p{color:#e3e9f5;font-size:17px;max-width:36em}
+.hero .acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.crumb{font-size:14px;font-weight:700;color:var(--orange);margin-bottom:10px}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.stat{background:var(--card);border:1px solid var(--line);padding:28px 24px;text-align:center}
+.stat b{display:block;font-size:clamp(30px,3.6vw,46px);line-height:1.1;white-space:nowrap}
+.stat b i{color:var(--orange);font-style:normal}
+.stat span{font-size:14px;color:var(--mute)}
+/* split */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.split img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.checks{list-style:none;padding:0;margin:18px 0 24px;display:grid;gap:12px}
+.checks li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;align-items:start}
+.checks svg{width:22px;height:22px;margin-top:3px}
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:32px}
+.cards.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{background:var(--card);border:1px solid var(--line);padding:28px 24px;display:flex;flex-direction:column}
+.card .ic{width:44px;height:44px;margin-bottom:16px;color:var(--orange)}
+.card p{color:var(--mute);font-size:15px;margin:0}
+.card .go{margin-top:18px;font-weight:700;font-size:15px;color:var(--blue2);text-decoration:none}
+.photo-card{padding:0;overflow:hidden}
+.photo-card img{aspect-ratio:16/10;object-fit:cover;width:100%}
+.photo-card div{padding:22px 24px 26px}
+/* dark band */
+.dark{background:var(--navy);color:#fff;text-align:center}
+.dark h2{color:#fff}
+.dark p{color:#b9c2cf;max-width:36em;margin-inline:auto}
+/* tables */
+.tbl{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+.tbl th,.tbl td{padding:14px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.tbl thead th{background:var(--blue);color:#fff;font-weight:700;font-size:14px}
+.tbl td.r,.tbl th.r{text-align:right;white-space:nowrap}
+.tbl td b{font-weight:700}
+.note{font-size:14px;color:var(--mute);margin-top:12px}
+.sample{display:inline-block;background:color-mix(in srgb,var(--orange) 14%,transparent);color:light-dark(#a24f0b,#f6b47a);font-size:13px;font-weight:700;padding:4px 10px;border-radius:3px;margin-bottom:14px}
+.specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px;margin-top:24px;border-top:2px solid var(--ink)}
+.specs div{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.specs dt{font-weight:700}.specs dd{margin:0;color:var(--mute)}
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:32px;list-style:none;padding:0;counter-reset:s}
+.steps li{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--orange);padding:20px 18px}
+.steps b{display:block;font-size:17px;margin-bottom:6px}
+.steps p{font-size:14px;color:var(--mute);margin:0}
+.addr{display:grid;gap:0;border-top:2px solid var(--ink);margin-top:20px}
+.addr div{display:grid;grid-template-columns:6em minmax(0,1fr);gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.addr span{font-weight:700}
+.maps{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto auto;gap:10px;margin-top:28px}
+.gallery img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.gallery img:first-child{grid-row:span 2;aspect-ratio:auto}
+.promo{margin-top:14px;border:1px solid var(--line);border-left:3px solid var(--orange);background:var(--card);padding:14px 16px;font-size:15px}
+.promo b{display:block;color:var(--orange);margin-bottom:2px}
+.coupons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}
+.coupons div{background:var(--card);border:1px solid var(--line);padding:16px 12px;text-align:center;display:grid;gap:2px}
+.coupons span{font-size:14px;font-weight:700}
+.coupons b{font-size:clamp(18px,2vw,22px);white-space:nowrap}
+.coupons em{font-style:normal;font-size:13px;color:var(--mute)}
+.coupons .best{border-color:var(--orange);box-shadow:inset 0 3px 0 var(--orange)}
+.coupons .best span{color:var(--orange)}
+@media(max-width:420px){.coupons{grid-template-columns:minmax(0,1fr)}}
+/* form */
+.ask{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(28px,5vw,72px);align-items:start}
+.box{background:var(--card);border:1px solid var(--line);padding:clamp(20px,3vw,36px)}
+form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 16px}
+.f{display:grid;gap:6px}.f.full{grid-column:1/-1}
+label,.lg{font-size:14px;font-weight:700}
+.req{color:var(--orange)}
+input,select,textarea{font:16px/1.5 "Noto Sans KR",sans-serif;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:11px 12px;min-height:48px;width:100%}
+textarea{min-height:150px;resize:vertical}
+.types{display:flex;flex-wrap:wrap;gap:8px}
+.types input{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px}
+.types label{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:4px;font-weight:500;cursor:pointer;font-size:15px;background:var(--bg)}
+.types input:checked+label{background:var(--blue);color:#fff;border-color:var(--blue)}
+.types input:focus-visible+label{outline:2px solid var(--orange);outline-offset:2px}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:14px;font-weight:400;color:var(--mute)}
+.agree input{width:20px;height:20px;min-height:0;margin-top:3px;flex:none}
+.err{color:#d2491a;font-size:14px;min-height:1.2em;grid-column:1/-1;margin:0}
+.done{grid-column:1/-1}
+.done pre{white-space:pre-wrap;font:14px/1.6 "Noto Sans KR",sans-serif;background:var(--panel);border:1px solid var(--line);padding:14px;margin:12px 0;max-height:260px;overflow:auto}
+.done .acts{display:flex;flex-wrap:wrap;gap:8px}
+.contact div{display:grid;grid-template-columns:4.5em minmax(0,1fr);gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.contact span{font-weight:700}
+footer{background:var(--navy);color:#9aa4b3;font-size:14px;padding-block:44px}
+footer .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:28px}
+footer b{color:#fff;display:block;margin-bottom:8px;font-size:15px}
+footer a{text-decoration:none}
+footer .logo{background:#fff;padding:10px 14px;border-radius:4px;width:150px;margin-bottom:14px}
+.view{display:none}.view.on{display:block}
+@media(max-width:1000px){.menu{display:none}.tog{display:inline-flex;align-items:center;justify-content:center}.nav .btn{display:none}
+  header.open .menu{display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px max(5vw,16px) 16px}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:800px){.split,.ask,.cards,.cards.two{grid-template-columns:minmax(0,1fr)}.specs{grid-template-columns:minmax(0,1fr)}footer .wrap{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){form{grid-template-columns:minmax(0,1fr)}.steps{grid-template-columns:minmax(0,1fr)}.gallery{grid-template-columns:1fr 1fr}.gallery img:first-child{grid-column:span 2;grid-row:auto;aspect-ratio:16/10}.tbl{font-size:14px}.tbl th,.tbl td{padding:10px 8px}.hero.big .wrap{min-height:70svh}}
+@media(prefers-reduced-motion:no-preference){.view.on{animation:fade .35s ease-out}@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="chk" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#f0862f" stroke-width="1.6"/><path d="M7.5 12.3l3 3 6-6.3" fill="none" stroke="#f0862f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-store" viewBox="0 0 44 44"><path d="M6 18h32v20H6z" fill="currentColor" opacity=".18"/><path d="M4 18l4-10h28l4 10M6 18v20h32V18M17 38V27h10v11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></symbol>
+  <symbol id="i-court" viewBox="0 0 44 44"><rect x="6" y="8" width="32" height="28" fill="currentColor" opacity=".18"/><path d="M6 8h32v28H6zM6 22h32M14 8v28M30 8v28" fill="none" stroke="currentColor" stroke-width="2.4"/></symbol>
+  <symbol id="i-gov" viewBox="0 0 44 44"><path d="M8 18h28v18H8z" fill="currentColor" opacity=".18"/><path d="M5 18l17-10 17 10M8 18v18M16 18v18M28 18v18M36 18v18M4 37h36" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></symbol>
+  <symbol id="i-bot" viewBox="0 0 44 44"><circle cx="22" cy="22" r="14" fill="currentColor" opacity=".18"/><circle cx="22" cy="22" r="14" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M12 15c4 3 4 11 0 14M32 15c-4 3-4 11 0 14" fill="none" stroke="currentColor" stroke-width="2.4"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 44 44"><path d="M4 22s7-11 18-11 18 11 18 11-7 11-18 11S4 22 4 22z" fill="currentColor" opacity=".18"/><path d="M4 22s7-11 18-11 18 11 18 11-7 11-18 11S4 22 4 22z" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="22" cy="22" r="5" fill="currentColor"/></symbol>
+  <symbol id="i-app" viewBox="0 0 44 44"><rect x="12" y="5" width="20" height="34" rx="3" fill="currentColor" opacity=".18"/><rect x="12" y="5" width="20" height="34" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M17 29v-6M22 29v-11M27 29v-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 44 44"><path d="M27 6a9 9 0 0 0-8 12L7 30l7 7 12-12a9 9 0 0 0 12-8l-6 3-5-5z" fill="currentColor" opacity=".18"/><path d="M27 6a9 9 0 0 0-8 12L7 30l7 7 12-12a9 9 0 0 0 12-8l-6 3-5-5z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header id="hd">
+  <div class="wrap nav">
+    <a class="brand" href="#home"><img src="img/mark.png" alt="">COURTRIX</a>
+    <ul class="menu" id="menu">
+      <li><a href="#about">코트릭스 소개</a></li>
+      <li><a href="#raxion">랙시온 소개</a></li>
+      <li><a href="#business">창업·도입</a></li>
+      <li><a href="#gwanggyo">광교 매장</a></li>
+      <li><a href="#contact">문의하기</a></li>
+    </ul>
+    <a class="btn" href="#contact" data-type="창업">도입 상담 신청</a>
+    <button class="tog" id="tog" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+<!-- HOME -->
+<section class="view" id="v-home">
+  <div class="hero big">
+    <img src="img/hero.jpg" alt="">
+    <div class="wrap">
+      <p class="crumb">RAXION 국내 독점 총판</p>
+      <h1>AI 스크린테니스 랙시온,<br>코트릭스가 공급하고 운영합니다</h1>
+      <p>장비 공급부터 시공, 설치, 운영 교육, A/S까지 한 곳에서. 광교 직영점에서 직접 쳐 보고 결정하세요.</p>
+      <div class="acts"><a class="btn" href="#contact" data-type="창업">창업·도입 상담</a><a class="btn text" href="#gwanggyo">광교 매장 이용 안내 →</a></div>
+    </div>
+  </div>
+  <div class="band grey">
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat"><b class="num">120<i>km/h</i></b><span>피칭봇 최고 구속</span></div>
+        <div class="stat"><b class="num">30<i>+</i></b><span>지정 가능한 낙하 지점</span></div>
+        <div class="stat"><b class="num">28<i>건</i></b><span>제조사 보유 특허</span></div>
+        <div class="stat"><b class="num">3<i>면</i></b><span>광교 직영점 코트</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="band">
+    <div class="wrap">
+      <p class="eye">What we do</p>
+      <h2>코트릭스가 하는 일</h2>
+      <div class="cards">
+        <div class="card"><svg class="ic"><use href="#i-court"/></svg><h3>랙시온 장비 공급</h3><p>제조사 조은브이엔씨와 국내 독점 총판 계약을 맺고 전국에 랙시온을 공급합니다.</p><a class="go" href="#raxion">랙시온 소개 →</a></div>
+        <div class="card"><svg class="ic"><use href="#i-store"/></svg><h3>창업·도입 컨설팅</h3><p>공간 실사, 코트 설계, 시공, 설치, 운영 교육까지 턴키로 진행합니다.</p><a class="go" href="#business">창업·도입 안내 →</a></div>
+        <div class="card"><svg class="ic"><use href="#i-bot"/></svg><h3>광교 직영점 운영</h3><p>코트 3면 규모의 직영 매장에서 자유 이용과 레슨을 운영합니다.</p><a class="go" href="#gwanggyo">매장 안내 →</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="band dark">
+    <div class="wrap">
+      <p class="eye">Contact</p>
+      <h2>창업 상담과 기기 도입, 지금 문의하세요</h2>
+      <p>원하시면 광교 직영점에서 실제 장비 체험을 함께 안내드립니다.</p>
+      <a class="btn" href="#contact" data-type="창업" style="margin-top:12px">문의 남기기</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="view" id="v-about">
+  <div class="hero sub"><img src="img/opening.jpg" alt=""><div class="wrap"><p class="crumb">코트릭스 소개</p><h1>랙시온의 국내 독점 총판,<br>주식회사 코트릭스</h1><p>테니스 시뮬레이터 랙시온을 국내에 공급하고, 매장을 열고 운영하는 일까지 함께합니다.</p></div></div>
+  <div class="band">
+    <div class="wrap split">
+      <div>
+        <p class="eye">Company</p>
+        <h2>장비를 파는 데서 끝나지 않습니다</h2>
+        <p class="lead">코트릭스는 제조사 (주)조은브이엔씨와 대한민국 전역을 권역으로 하는 독점 총판 계약을 맺었습니다. 판매·영업부터 설치, 수리, C/S와 A/S까지 국내 창구를 맡고, 광교에 직영 매장을 직접 운영하며 쌓은 노하우를 도입 고객과 나눕니다.</p>
+        <ul class="checks">
+          <li><svg><use href="#chk"/></svg><span>대한민국 전역 랙시온 독점 공급권</span></li>
+          <li><svg><use href="#chk"/></svg><span>장비 유통 · 시설 시공 · 운영 컨설팅 · 공공 납품</span></li>
+          <li><svg><use href="#chk"/></svg><span>랙시온 광교점 직영 운영 (코트 3면)</span></li>
+          <li><svg><use href="#chk"/></svg><span>설치 후 정기 점검, 소프트웨어 업데이트, 장애 대응</span></li>
+        </ul>
+        <a class="btn" href="#contact" data-type="창업">상담 신청</a>
+      </div>
+      <img src="img/store-b.jpg" alt="랙시온 광교점 코트 전경">
+    </div>
+  </div>
+  <div class="band grey">
+    <div class="wrap">
+      <p class="eye">Overview</p>
+      <h2>회사 개요</h2>
+      <dl class="specs">
+        <div><dt>상호</dt><dd>주식회사 코트릭스 (COURTRIX)</dd></div>
+        <div><dt>공급 권한</dt><dd>RAXION 국내 독점 총판</dd></div>
+        <div><dt>사업 영역</dt><dd>장비 총판·유통, 시설 시공, 운영 컨설팅, 조달 납품</dd></div>
+        <div><dt>직영 매장</dt><dd>랙시온 스크린테니스 광교점 · 코트 3면</dd></div>
+        <div><dt>사후 관리</dt><dd>설치·유지보수 교육, 정기 점검, 원격 지원</dd></div>
+        <div><dt>연락처</dt><dd>010-8110-1540 · courtrix15@gmail.com</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- RAXION -->
+<section class="view" id="v-raxion">
+  <div class="hero sub"><img src="img/court-wide.jpg" alt=""><div class="wrap"><p class="crumb">랙시온 소개</p><h1>Tennis Starts with Reaction</h1><p>AI 볼 트래킹 센서, 피칭봇, 스크린을 하나로 묶은 테니스 시뮬레이터. 매 샷의 속도, 회전, 낙하 지점을 기록합니다.</p></div></div>
+  <div class="band">
+    <div class="wrap">
+      <p class="eye">System</p>
+      <h2>한 면을 이루는 다섯 가지 장비</h2>
+      <div class="split" style="align-items:start;margin-top:20px">
+        <img src="img/court-grey.jpg" alt="스크린과 피칭봇이 설치된 랙시온 코트">
+        <dl class="specs" style="grid-template-columns:minmax(0,1fr);margin-top:0">
+          <div><dt>AI 센서</dt><dd>비전 카메라 기반 3모듈, 200–250fps, 6–10m 범위의 공을 밀리미터 단위로 추적</dd></div>
+          <div><dt>피칭봇</dt><dd>20–120km/h, 탑스핀·슬라이스·플랫, 초당 최대 1발, 65dB 저소음</dd></div>
+          <div><dt>스크린</dt><dd>신축성 패브릭으로 리바운드 최소화, 공 끼임 방지 보강</dd></div>
+          <div><dt>프로젝터</dt><dd>5,000 ANSI 루멘 이상, 실내외 환경 대응</dd></div>
+          <div><dt>스테이션</dt><dd>퍼포먼스 PC, 키오스크·태블릿 컨트롤, QR 로그인</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <div class="band grey">
+    <div class="wrap">
+      <p class="eye">Why RAXION</p>
+      <h2>랙시온의 장점</h2>
+      <div class="cards">
+        <div class="card"><svg class="ic"><use href="#i-bot"/></svg><h3>실제 구질에 가까운 공</h3><p>좌우 30°, 상 35°·하 20°로 발사 각도를 바꾸고 30개 낙하 지점(오차 반경 35cm)을 지정합니다.</p></div>
+        <div class="card"><svg class="ic"><use href="#i-eye"/></svg><h3>넓은 추적 범위</h3><p>센서 3개가 천장 프레임에서 6–10m 코트 전 영역을 봅니다. 공의 궤적과 착지점을 놓치지 않습니다.</p></div>
+        <div class="card"><svg class="ic"><use href="#i-app"/></svg><h3>기록이 남는 레슨</h3><p>세션 직후 속도·회전·IN 비율·히트맵이 앱에 저장되고, 코치는 듀얼 앵글 뷰와 태블릿 드로잉으로 교정합니다.</p></div>
+        <div class="card"><svg class="ic"><use href="#i-court"/></svg><h3>입문부터 선수까지</h3><p>초보·연습·패턴 훈련·AI 랠리·아케이드·피지컬, 여섯 가지 모드를 한 장비로 운영합니다.</p></div>
+        <div class="card"><svg class="ic"><use href="#i-store"/></svg><h3>코치 없는 시간도 매출</h3><p>회원이 혼자 예약하고 훈련할 수 있어 새벽·심야 같은 비는 시간대도 코트를 돌릴 수 있습니다.</p></div>
+        <div class="card"><svg class="ic"><use href="#i-wrench"/></svg><h3>검증된 제조사</h3><p>1996년부터 유압 실린더와 골프 스윙 플레이트를 만든 조은브이엔씨. 2026 대한민국 스포츠산업 선도기업.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="band">
+    <div class="wrap split">
+      <img src="img/play.jpg" alt="아케이드 모드로 풍선을 맞히는 플레이어">
+      <div>
+        <p class="eye">Play modes</p>
+        <h2>실력이 오르는 만큼 모드도 올라갑니다</h2>
+        <ul class="checks">
+          <li><svg><use href="#chk"/></svg><span><b>연습 모드</b> · 구속·스핀·낙하 지점을 정해 같은 샷을 반복</span></li>
+          <li><svg><use href="#chk"/></svg><span><b>패턴 훈련</b> · 원하는 구질과 패턴을 설계해 약한 샷만 집중</span></li>
+          <li><svg><use href="#chk"/></svg><span><b>AI 랠리</b> · 숏 코트, 크로스, 풀 코트 랠리와 음성 라인 콜</span></li>
+          <li><svg><use href="#chk"/></svg><span><b>초보·피지컬</b> · 기본기부터 단계별 가이드</span></li>
+          <li><svg><use href="#chk"/></svg><span><b>아케이드</b> · 풍선·두더지 게임으로 가족과 이벤트 방문객도</span></li>
+        </ul>
+        <a class="btn line" href="https://raxionofficial.com">raxionofficial.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS -->
+<section class="view" id="v-business">
+  <div class="hero sub"><img src="img/store-a.jpg" alt=""><div class="wrap"><p class="crumb">창업·도입</p><h1>스크린테니스 창업과<br>기존 시설 기기 도입</h1><p>공간 실사부터 오픈 후 A/S까지 코트릭스가 한 창구로 진행합니다.</p><div class="acts"><a class="btn" href="#contact" data-type="창업">상담 신청</a></div></div></div>
+  <div class="band">
+    <div class="wrap">
+      <p class="eye">For whom</p>
+      <h2>이런 분들께 맞습니다</h2>
+      <div class="cards">
+        <div class="card"><svg class="ic"><use href="#i-store"/></svg><h3>신규 창업</h3><p>상가나 유휴 공간에 스크린테니스장을 새로 여는 분. 코치 구인 부담 없이 무인 이용 시간대를 운영할 수 있습니다.</p></div>
+        <div class="card"><svg class="ic"><use href="#i-court"/></svg><h3>테니스장·아카데미</h3><p>운영 중인 실내 테니스장이나 레슨장. 비피크 시간의 빈 코트를 자율 훈련으로 채우고, 레슨을 데이터로 표준화합니다.</p></div>
+        <div class="card"><svg class="ic"><use href="#i-gov"/></svg><h3>공공기관·기업·학교</h3><p>연수원, 복지시설, 체육시설. 기관 일정과 예산 절차에 맞춘 도입 제안서와 현장 실사를 지원합니다.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="band grey">
+    <div class="wrap">
+      <p class="eye">Process</p>
+      <h2>도입은 이렇게 진행됩니다</h2>
+      <ol class="steps">
+        <li><b>상담</b><p>목적, 희망 코트 수, 일정과 예산 범위를 듣습니다. 광교점 체험도 안내합니다.</p></li>
+        <li><b>현장 실사</b><p>길이·폭·층고, 전기, 천장 구조, 바닥 평탄도를 확인합니다. 비용 부담 없음.</p></li>
+        <li><b>설계·견적</b><p>실사 결과로 코트 배치와 시공 범위를 잡고 확정 견적을 드립니다.</p></li>
+        <li><b>시공·설치</b><p>바닥재, 펜스, 스크린 프레임 시공 후 장비를 설치하고 운영자·코치를 교육합니다.</p></li>
+        <li><b>운영 지원</b><p>정기 점검, 센서 캘리브레이션, 소프트웨어 업데이트, 장애 대응.</p></li>
+      </ol>
+    </div>
+  </div>
+  <div class="band">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <p class="eye">Space</p>
+        <h2>코트 한 면에 필요한 공간</h2>
+        <p class="lead">좁은 공간용 레이아웃부터 실제 규격 풀 코트까지 공간에 맞춰 설계합니다. 정확한 가능 여부는 현장 실사로 확인합니다.</p>
+        <table class="tbl" style="margin-top:20px">
+          <thead><tr><th>항목</th><th class="r">기준</th></tr></thead>
+          <tbody>
+            <tr><td>길이</td><td class="r">8.0–12.0 m</td></tr>
+            <tr><td>폭</td><td class="r">4.5–6.0 m</td></tr>
+            <tr><td>층고</td><td class="r">2.8–4.0 m</td></tr>
+            <tr><td>설치 위치</td><td class="r">센서 천장 3곳 · 피칭봇 스크린 중앙</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <p class="eye">Included</p>
+        <h2>도입하면 함께 받는 것</h2>
+        <ul class="checks">
+          <li><svg><use href="#chk"/></svg><span>AI 센서 · 피칭봇 · 스크린 · 프로젝터 · 랙시온 스테이션</span></li>
+          <li><svg><use href="#chk"/></svg><span>바닥재 · 안전 펜스 · 구조물 시공 (선택)</span></li>
+          <li><svg><use href="#chk"/></svg><span>관리자 앱: 회원, 예약, 이용권, 여러 코트 통합 관리</span></li>
+          <li><svg><use href="#chk"/></svg><span>사용자·관리자·서비스 매뉴얼과 운영 교육</span></li>
+          <li><svg><use href="#chk"/></svg><span>본사 전문 A/S 평일 9–18시, 구동 전 자동 사전 점검</span></li>
+          <li><svg><use href="#chk"/></svg><span>광교 직영점 운영 노하우 공유</span></li>
+        </ul>
+        <a class="btn" href="#contact" data-type="창업">견적·실사 요청</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GWANGGYO -->
+<section class="view" id="v-gwanggyo">
+  <div class="hero sub"><img src="img/lesson.jpg" alt=""><div class="wrap"><p class="crumb">광교 매장</p><h1>랙시온 스크린테니스 광교점</h1><p>코트릭스가 직접 운영하는 랙시온 직영점입니다. 날씨와 파트너 걱정 없이, 예약하고 와서 치세요.</p><div class="acts"><a class="btn" href="#contact" data-type="레슨">예약·레슨 문의</a><a class="btn text" href="#loc">오시는 길 →</a></div></div></div>
+  <div class="band">
+    <div class="wrap">
+      <p class="eye">Programs</p>
+      <h2>이렇게 이용하실 수 있습니다</h2>
+      <div class="cards">
+        <div class="card photo-card"><img src="img/racket.jpg" alt="스크린 앞 플레이어"><div><h3>자유 이용</h3><p>코트를 시간 단위로 예약해 혼자 또는 친구와 칩니다. 연습·패턴·랠리 모드를 자유롭게 선택합니다.</p></div></div>
+        <div class="card photo-card"><img src="img/hero.jpg" alt="코치 레슨 중인 코트"><div><h3>정규·쿠폰 레슨</h3><p>레슨 20분에 스크린 10분을 더한 정규 레슨(평일반·주말반, 1인·2인)과 원하는 날 받는 쿠폰 레슨이 있습니다.</p></div></div>
+        <div class="card photo-card"><img src="img/play.jpg" alt="아케이드 모드"><div><h3>원포인트·특별 레슨</h3><p>고치고 싶은 샷 하나만 짚는 원포인트 레슨, 목적과 수준에 맞춘 특별 레슨도 운영합니다.</p></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="band grey" id="price">
+    <div class="wrap">
+      <p class="eye">Price</p>
+      <h2>이용 및 프로그램 요금</h2>
+      <p class="lead">스크린 테니스 코트 이용 요금과 레슨 프로그램 요금입니다.</p>
+      <div class="split" style="align-items:start;margin-top:24px">
+        <div>
+          <h3>코트 이용</h3>
+          <div style="overflow-x:auto;margin-top:10px">
+            <table class="tbl">
+              <thead><tr><th>이용 시간</th><th class="r">정상가</th><th class="r">오픈 할인가</th></tr></thead>
+              <tbody>
+                <tr><td><b>10분</b></td><td class="r"><s class="mute">8,000원</s></td><td class="r"><b>7,000원</b></td></tr>
+                <tr><td><b>20분</b></td><td class="r"><s class="mute">15,000원</s></td><td class="r"><b>12,000원</b></td></tr>
+                <tr><td><b>30분</b></td><td class="r"><s class="mute">22,000원</s></td><td class="r"><b>17,000원</b></td></tr>
+                <tr><td><b>60분</b></td><td class="r"><s class="mute">42,000원</s></td><td class="r"><b>33,000원</b></td></tr>
+                <tr><td><b>90분</b></td><td class="r"><s class="mute">60,000원</s></td><td class="r"><b>48,000원</b></td></tr>
+                <tr><td><b>120분</b></td><td class="r"><s class="mute">78,000원</s></td><td class="r"><b>62,000원</b></td></tr>
+                <tr><td><b>180분</b></td><td class="r"><s class="mute">115,000원</s></td><td class="r"><b>92,000원</b></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="promo"><b>오픈 할인</b>할인가는 2026년 12월 31일까지 적용되며, 2027년 1월 1일부터 정가가 적용됩니다.</div>
+        </div>
+        <div>
+          <h3>정규 레슨 <span class="mute" style="font-size:15px;font-weight:400">레슨 20분 + 스크린 10분, 4주 기준</span></h3>
+          <div style="overflow-x:auto;margin-top:10px">
+            <table class="tbl">
+              <thead><tr><th>평일반</th><th class="r">주 1회</th><th class="r">주 2회</th><th class="r">주 3회</th></tr></thead>
+              <tbody>
+                <tr><td><b>1인</b></td><td class="r">165,000원</td><td class="r">275,000원</td><td class="r">352,000원</td></tr>
+                <tr><td><b>2인</b></td><td class="r">275,000원</td><td class="r">418,000원</td><td class="r">528,000원</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="overflow-x:auto;margin-top:12px">
+            <table class="tbl">
+              <thead><tr><th>주말반</th><th class="r">주 1회</th><th class="r">주 2회</th></tr></thead>
+              <tbody>
+                <tr><td><b>1인</b></td><td class="r">187,000원</td><td class="r">319,000원</td></tr>
+                <tr><td><b>2인</b></td><td class="r">330,000원</td><td class="r">528,000원</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3 style="margin-top:28px">쿠폰 레슨</h3>
+          <div class="coupons">
+            <div><span>원포인트</span><b class="num">66,000원</b><em>1회</em></div>
+            <div><span>5회권</span><b class="num">275,000원</b><em>회당 55,000원</em></div>
+            <div class="best"><span>10회권 · BEST</span><b class="num">500,000원</b><em>회당 50,000원</em></div>
+          </div>
+          <h3 style="margin-top:28px">특별 레슨</h3>
+          <p class="mute" style="margin:4px 0 0">목적과 수준에 맞춘 맞춤형 레슨입니다. 요금은 별도 문의해 주세요. <a href="tel:01081101540" style="white-space:nowrap;font-weight:700;color:var(--ink)">010-8110-1540</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="band" id="loc">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <p class="eye">Location</p>
+        <h2>오시는 길</h2>
+        <div class="addr">
+          <div><span>주소</span><p style="margin:0">경기도 수원시 영통구 광교중앙로 266번길 30, 307호<br>(그랜드프라자 3층)</p></div>
+          <div><span>규모</span><p style="margin:0">랙시온 코트 3면</p></div>
+          <div><span>예약·문의</span><p style="margin:0"><a href="tel:01081101540">010-8110-1540</a></p></div>
+        </div>
+        <div class="maps">
+          <a class="btn line" href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%88%98%EC%9B%90%EC%8B%9C%20%EC%98%81%ED%86%B5%EA%B5%AC%20%EA%B4%91%EA%B5%90%EC%A4%91%EC%95%99%EB%A1%9C266%EB%B2%88%EA%B8%B8%2030">네이버 지도</a>
+          <a class="btn line" href="https://map.kakao.com/?q=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%88%98%EC%9B%90%EC%8B%9C%20%EC%98%81%ED%86%B5%EA%B5%AC%20%EA%B4%91%EA%B5%90%EC%A4%91%EC%95%99%EB%A1%9C266%EB%B2%88%EA%B8%B8%2030">카카오맵</a>
+        </div>
+      </div>
+      <div class="gallery">
+        <img src="img/store-b.jpg" alt="광교점 코트 전경">
+        <img src="img/opening.jpg" alt="광교점 개업 당일 플레이 모습">
+        <img src="img/court-grey.jpg" alt="광교점 코트">
+        <img src="img/store-a.jpg" alt="광교점 코트 두 면">
+        <img src="img/court-wide.jpg" alt="광교점 코트와 천장 장비">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="view" id="v-contact">
+  <div class="hero sub"><img src="img/court-wide.jpg" alt=""><div class="wrap"><p class="crumb">문의하기</p><h1>무엇이든 남겨 주세요</h1><p>창업, 기기 도입, 광교점 레슨·이용 문의를 받습니다. 영업일 기준 1–2일 안에 연락드립니다.</p></div></div>
+  <div class="band grey">
+    <div class="wrap ask">
+      <div>
+        <p class="eye">Contact</p>
+        <h2>바로 연락하셔도 됩니다</h2>
+        <div class="contact">
+          <div><span>전화</span><a href="tel:01081101540">010-8110-1540</a></div>
+          <div><span>메일</span><a href="mailto:courtrix15@gmail.com">courtrix15@gmail.com</a></div>
+          <div><span>매장</span><p style="margin:0">경기도 수원시 영통구 광교중앙로 266번길 30, 307호 (그랜드프라자 3층)</p></div>
+        </div>
+      </div>
+      <div class="box">
+        <form id="form" novalidate>
+          <div class="f full">
+            <span class="lg">문의 유형 <span class="req">*</span></span>
+            <div class="types" role="radiogroup" aria-label="문의 유형">
+              <input type="radio" name="type" id="t1" value="창업"><label for="t1">스크린테니스 창업</label>
+              <input type="radio" name="type" id="t2" value="도입"><label for="t2">기존 시설 기기 도입</label>
+              <input type="radio" name="type" id="t3" value="기관"><label for="t3">공공·기업 도입</label>
+              <input type="radio" name="type" id="t4" value="레슨"><label for="t4">광교점 레슨·이용</label>
+              <input type="radio" name="type" id="t5" value="기타"><label for="t5">기타</label>
+            </div>
+          </div>
+          <div class="f"><label for="name">이름 <span class="req">*</span></label><input id="name" autocomplete="name"></div>
+          <div class="f"><label for="phone">연락처 <span class="req">*</span></label><input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="010-0000-0000"></div>
+          <div class="f"><label for="email">이메일</label><input id="email" type="email" autocomplete="email"></div>
+          <div class="f"><label for="region">지역</label><input id="region" placeholder="예: 경기 수원시"></div>
+          <div class="f full" id="spaceRow"><label for="space">설치 예정 공간</label>
+            <select id="space"><option value="">선택</option><option>아직 없음, 함께 찾고 싶음</option><option>확보함 · 30평 미만</option><option>확보함 · 30–80평</option><option>확보함 · 80평 이상</option><option>운영 중인 시설에 추가</option></select>
+          </div>
+          <div class="f full"><label for="msg">문의 내용 <span class="req">*</span></label><textarea id="msg" placeholder="희망 코트 수, 오픈 시기, 레슨 희망 요일 등을 적어 주세요."></textarea></div>
+          <label class="agree f full"><input type="checkbox" id="agree"><span>상담을 위해 이름·연락처·이메일·문의 내용을 수집하며, 상담 완료 후 1년간 보관합니다. 동의합니다. <span class="req">*</span></span></label>
+          <p class="err" id="err" aria-live="polite"></p>
+          <div class="f full"><button class="btn" type="submit" id="send">문의 보내기</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><img class="logo" src="img/logo.png" alt="COURTRIX"><b>주식회사 코트릭스</b>랙시온(RAXION) 국내 독점 총판<br>© 2026 Courtrix. RAXION은 조은브이엔씨의 브랜드입니다.</div>
+    <div><b>광교 직영점</b>경기도 수원시 영통구 광교중앙로 266번길 30, 307호 (그랜드프라자 3층)</div>
+    <div><b>문의</b>TEL 010-8110-1540<br>MAIL courtrix15@gmail.com<br><a href="https://raxionofficial.com">raxionofficial.com</a></div>
+  </div>
+</footer>
+
+<script>
+{
+  const TO = 'courtrix15@gmail.com';
+  const views = ['home', 'about', 'raxion', 'business', 'gwanggyo', 'contact'];
+  const sub = { price: 'gwanggyo', loc: 'gwanggyo' };
+  const hd = document.getElementById('hd');
+  const tog = document.getElementById('tog');
+  function route() {
+    const h = (location.hash || '').slice(1);
+    const v = views.includes(h) ? h : (sub[h] || 'home');
+    for (const id of views) document.getElementById('v-' + id).classList.toggle('on', id === v);
+    document.querySelectorAll('#menu a').forEach(a => { if (a.getAttribute('href') === '#' + v) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+    hd.classList.remove('open'); tog.setAttribute('aria-expanded', 'false');
+    if (sub[h]) { const t = document.getElementById(h); if (t) t.scrollIntoView(); } else window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', route);
+  tog.addEventListener('click', () => { const o = hd.classList.toggle('open'); tog.setAttribute('aria-expanded', String(o)); });
+
+  const form = document.getElementById('form');
+  const err = document.getElementById('err');
+  const spaceRow = document.getElementById('spaceRow');
+  function sync() {
+    const t = (form.querySelector('input[name=type]:checked') || {}).value;
+    spaceRow.style.display = t === '레슨' ? 'none' : '';
+  }
+  form.addEventListener('change', e => { if (e.target.name === 'type') sync(); });
+  document.querySelectorAll('a[data-type]').forEach(a => a.addEventListener('click', () => {
+    const r = form.querySelector('input[name=type][value="' + a.dataset.type + '"]');
+    if (r) { r.checked = true; sync(); }
+  }));
+
+  // Web3Forms access key: web3forms.com 에서 courtrix15@gmail.com 으로 발급받은 키를 아래에 붙여 넣으세요.
+  const W3F_KEY = 'YOUR_ACCESS_KEY_HERE';
+  const val = id => document.getElementById(id).value.trim();
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    err.textContent = '';
+    const type = (form.querySelector('input[name=type]:checked') || {}).value || '';
+    const d = { type, name: val('name'), phone: val('phone'), email: val('email'), region: val('region'), space: type === '레슨' ? '' : val('space'), msg: val('msg'), at: new Date().toISOString() };
+    const miss = [];
+    if (!d.type) miss.push('문의 유형');
+    if (!d.name) miss.push('이름');
+    if (!/^[0-9+\-\s()]{9,}$/.test(d.phone)) miss.push('연락처');
+    if (d.email && !/^\S+@\S+\.\S+$/.test(d.email)) miss.push('이메일 형식');
+    if (!d.msg) miss.push('문의 내용');
+    if (!document.getElementById('agree').checked) miss.push('개인정보 수집 동의');
+    if (miss.length) { err.textContent = miss.join(', ') + '을(를) 확인해 주세요.'; return; }
+    const btn = document.getElementById('send');
+    btn.disabled = true; btn.textContent = '보내는 중…';
+    let saved = false;
+    if (W3F_KEY && W3F_KEY !== 'YOUR_ACCESS_KEY_HERE') {
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            access_key: W3F_KEY,
+            subject: '[코트릭스 홈페이지 문의] ' + d.type + ' - ' + d.name,
+            from_name: '코트릭스 홈페이지',
+            '문의 유형': d.type, '이름': d.name, '연락처': d.phone, '이메일': d.email || '-',
+            '지역': d.region || '-', '설치 예정 공간': d.space || '-', '문의 내용': d.msg,
+            replyto: d.email || undefined
+          })
+        });
+        const j = await res.json().catch(() => ({}));
+        saved = res.ok && j.success !== false;
+      } catch (x) { saved = false; }
+    }
+    done(d, saved);
+  });
+
+  function done(d, saved) {
+    const lines = ['[코트릭스 문의] ' + d.type, '이름: ' + d.name, '연락처: ' + d.phone];
+    if (d.email) lines.push('이메일: ' + d.email);
+    if (d.region) lines.push('지역: ' + d.region);
+    if (d.space) lines.push('공간: ' + d.space);
+    lines.push('', d.msg);
+    const text = lines.join('\n');
+    const mailHref = 'mailto:' + TO + '?subject=' + encodeURIComponent('[코트릭스 문의] ' + d.type + ' - ' + d.name) + '&body=' + encodeURIComponent(text);
+    const box = document.createElement('div'); box.className = 'done';
+    const h = document.createElement('h3');
+    const p = document.createElement('p'); p.className = 'mute';
+    h.textContent = saved ? '문의가 접수되었습니다.' : '전송이 완료되지 않았습니다';
+    p.textContent = saved
+      ? d.name + '님, 남겨 주신 연락처로 영업일 기준 1–2일 안에 연락드리겠습니다.'
+      : (W3F_KEY === 'YOUR_ACCESS_KEY_HERE' ? '아래 버튼을 누르면 메일 앱이 열리고 내용이 채워집니다. 전송 버튼만 눌러 주세요. 메일 앱이 없다면' : '네트워크 문제로 자동 접수가 되지 않았습니다. 아래 버튼으로 메일을 보내시거나,') + ' 내용을 복사해 ' + TO + ' 또는 010-8110-1540 문자로 보내 주세요.';
+    const pre = document.createElement('pre'); pre.textContent = text;
+    const acts = document.createElement('div'); acts.className = 'acts';
+    const mail = document.createElement('a'); mail.className = 'btn'; mail.href = mailHref; mail.textContent = TO + '로 메일 보내기';
+    const copy = document.createElement('button'); copy.type = 'button'; copy.className = 'btn line'; copy.textContent = '내용 복사';
+    copy.addEventListener('click', async () => { try { await navigator.clipboard.writeText(text); copy.textContent = '복사됨'; } catch (x) { copy.textContent = '직접 선택해 복사해 주세요'; } });
+    acts.append(mail, copy);
+    if (saved) box.append(h, p); else box.append(h, p, pre, acts);
+    form.replaceChildren(box);
+  }
+  sync();
+  route();
+}
+</script>
+</body>
+</html>
