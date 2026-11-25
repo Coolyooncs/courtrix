@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>코트릭스 | 랙시온 스크린테니스 국내 총판</title>
+<!-- build: formsubmit-v2 -->
 <meta name="description" content="AI 스크린테니스 랙시온(RAXION) 국내 독점 총판 코트릭스. 창업·기기 도입 상담, 광교 직영점 코트 이용과 레슨 안내.">
 <link rel="icon" href="img/mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -572,7 +573,7 @@ footer .logo{background:#fff;padding:10px 14px;border-radius:4px;width:150px;mar
     if (miss.length) { err.textContent = miss.join(', ') + '을(를) 확인해 주세요.'; return; }
     const btn = document.getElementById('send');
     btn.disabled = true; btn.textContent = '보내는 중…';
-    let saved = false;
+    let saved = false, needAct = false;
     const fields = {
       '문의 유형': d.type, '이름': d.name, '연락처': d.phone, '이메일': d.email || '-',
       '지역': d.region || '-', '설치 예정 공간': d.space || '-', '문의 내용': d.msg
@@ -594,11 +595,12 @@ footer .logo{background:#fff;padding:10px 14px;border-radius:4px;width:150px;mar
       }
       j = await res.json().catch(() => ({}));
       saved = res.ok && (j.success === true || j.success === 'true');
+      needAct = !saved && /activat/i.test(String(j.message || ''));
     } catch (x) { saved = false; }
-    done(d, saved);
+    done(d, saved, needAct);
   });
 
-  function done(d, saved) {
+  function done(d, saved, needAct) {
     const lines = ['[코트릭스 문의] ' + d.type, '이름: ' + d.name, '연락처: ' + d.phone];
     if (d.email) lines.push('이메일: ' + d.email);
     if (d.region) lines.push('지역: ' + d.region);
@@ -609,9 +611,10 @@ footer .logo{background:#fff;padding:10px 14px;border-radius:4px;width:150px;mar
     const box = document.createElement('div'); box.className = 'done';
     const h = document.createElement('h3');
     const p = document.createElement('p'); p.className = 'mute';
-    h.textContent = saved ? '문의가 접수되었습니다.' : '전송이 완료되지 않았습니다';
+    h.textContent = saved ? '문의가 접수되었습니다.' : needAct ? '메일 수신 인증이 필요합니다 (관리자 최초 1회)' : '전송이 완료되지 않았습니다';
     p.textContent = saved
       ? d.name + '님, 남겨 주신 연락처로 영업일 기준 1–2일 안에 연락드리겠습니다.'
+      : needAct ? TO + ' 받은편지함(또는 스팸함)에 온 FormSubmit 메일에서 Activate Form 버튼을 눌러 주세요. 인증 후 보내는 문의부터 메일로 들어옵니다.'
       : '일시적인 문제로 자동 접수가 되지 않았습니다. 아래 버튼으로 메일을 보내시거나, 내용을 복사해 ' + TO + ' 또는 010-8110-1540 문자로 보내 주세요.';
     const pre = document.createElement('pre'); pre.textContent = text;
     const acts = document.createElement('div'); acts.className = 'acts';
